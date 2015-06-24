@@ -57,6 +57,8 @@ function ShaderProgram(vertexShaderID, fragmentShaderID) {
             case 'attribute':
                 handles[handleName] = gl.getAttribLocation(programID,
                                                           handleName);
+                gl.enableVertexAttribArray(handles[handleName]);
+
                 break;
             case 'uniform':
                 handles[handleName] = gl.getUniformLocation(programID,
