@@ -23,7 +23,8 @@ var RenderEngine = {
     
     initElements: function() {
         // Add elements to render queue
-        this.addRenderElement("regular", new regularPolygonElement("shader-vs", "shader-fs"));  
+        this.addRenderElement("regular", new regularPolygonElement("shader-vs", "shader-fs")); 
+        this.addRenderElement("texture", new texturePolygonElement("shader2-vs", "shader2-fs"));
     },
     
     setup: function() {

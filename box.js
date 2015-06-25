@@ -1,4 +1,4 @@
-function Box(_position) {
+function Box(_position, _texture) {
     
     this.update = function() {
         mat4.identity(modelMatrix);
@@ -15,7 +15,11 @@ function Box(_position) {
     this.getMesh = function() {
         return mesh;
     };
-      
+    
+    this.getT = function() {
+        return texture;
+    };
+  
     var pushMatrix = function() {
         var copy = mat4.create();
         mat4.set(modelMatrix, copy);
@@ -34,6 +38,7 @@ function Box(_position) {
     };
     
     var mesh = LoadManager.getMesh("cube");
+    var texture = LoadManager.getTexture(_texture);
     var modelMatrix = mat4.create();
     var mMatrixStack = [];
     var position = _position;

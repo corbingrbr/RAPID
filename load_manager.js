@@ -15,7 +15,8 @@ var LoadManager = {
     getTexture: function(name) { return this.textures[name]; },
 
     setup: function() {
-       this.loadMesh("cube", new Cube());
+        this.loadTexture("crate", new Texture("crate.gif"));
+        this.loadMesh("cube", new Cube());
     },
 
     meshes: new Object(),
