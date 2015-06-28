@@ -21,8 +21,8 @@ var Scene = {
         this.cam.setProjectionMatrix(mat4.perspective(45, gl.viewportWidth / gl.viewportHeight, 0.1, 100.0, null));
 
 
-        this.addObject("box", new Box([2.0,0.0,-16.0], "crate"), "texture");
-        this.addObject("box1", new Box([-2.0, 0.0, -16.0], ""), "regular");
+        this.addObject("box", new Box([0.0,0.0,-9.0], "crate"), "texture");
+        //this.addObject("box1", new Box([-2.0, 0.0, -16.0], ""), "regular");
    },
         
     objects: new Object(),

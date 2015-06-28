@@ -1,4 +1,4 @@
-var LoadManager = {    
+var AssetManager = {    
     
     loadMesh: function(name, mesh) { 
         mesh.load();

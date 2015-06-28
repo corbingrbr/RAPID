@@ -72,8 +72,13 @@ function texturePolygonElement(vertexShaderID, fragmentShaderID) {
     // Renders an Object
     this.renderObject = function(object) { 
 
-        gl.activeTexture(gl.TEXTURE0);
-        gl.bindTexture(gl.TEXTURE_2D, object.getT().getTex());
+        //gl.activeTexture(gl.TEXTURE0);
+        
+        if (AssetManager.textures["geo"]) {
+            gl.bindTexture(gl.TEXTURE_2D, AssetManager.textures["geo"]);
+        } else {
+            gl.bindTexture(gl.TEXTURE_2D, object.getT().getTex());
+        }
 
         gl.uniformMatrix4fv(shader.getHandle("uMMatrix"), false, object.getModelMatrix());
         gl.drawElements(gl.TRIANGLES, object.getMesh().getIndices().length, gl.UNSIGNED_SHORT, 0);

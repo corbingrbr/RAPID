@@ -5,7 +5,7 @@ function Box(_position, _texture) {
         mat4.translate(modelMatrix, position);
         mat4.rotate(modelMatrix, degToRad(rotation), [1, 1, 1]);        
 
-        rotation -= (75 * TimeManager.getDeltaTime()) / 1000.0;
+        //rotation -= (75 * TimeManager.getDeltaTime()) / 1000.0;
     };
     
     this.getModelMatrix = function() {
@@ -37,8 +37,8 @@ function Box(_position, _texture) {
         return degrees * Math.PI / 180;
     };
     
-    var mesh = LoadManager.getMesh("cube");
-    var texture = LoadManager.getTexture(_texture);
+    var mesh = AssetManager.getMesh("cube");
+    var texture = AssetManager.getTexture(_texture);
     var modelMatrix = mat4.create();
     var mMatrixStack = [];
     var position = _position;
